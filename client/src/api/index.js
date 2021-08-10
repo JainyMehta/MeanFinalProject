@@ -19,5 +19,11 @@ export const comment = (value, id) => API.post(`/posts/${id}/commentPost`, { val
 export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);
 export const deletePost = (id) => API.delete(`/posts/${id}`);
 
+export const getContactUs = (page) => API.get(`/contactus?page=${page}`);
+export const createContactUs = (newQuery) => API.post('/contactus', newQuery);
+export const updateContactUs = (id, updatedQuery) => API.patch(`/contactus/${id}`, updatedQuery);
+export const deleteContactUs = (id) => API.delete(`/contactus/${id}`);
+
+
 export const signIn = (formData) => API.post('/user/signin', formData);
 export const signUp = (formData) => API.post('/user/signup', formData);

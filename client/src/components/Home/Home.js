@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Grow, Grid, AppBar, TextField, Button, Paper } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
 
 import { getPostsBySearch } from '../../actions/posts';
@@ -71,6 +71,8 @@ const Home = () => {
                 <Pagination page={page} />
               </Paper>
             )}
+            <br/>
+            <Button component={Link} to="/contactus" variant="contained" color="primary">Contact Us</Button>
           </Grid>
         </Grid>
       </Container>

@@ -23,7 +23,7 @@ export const getContactUs = async (req, res) => {
 
 export const createContactUs = async (req, res) => {
     const query = req.body;
-
+    console.log(query);
     const newContactUsMessage = new ContactUs({ ...query,status: "unread", createdAt: new Date().toISOString() })
 
     try {

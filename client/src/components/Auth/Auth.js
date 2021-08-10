@@ -36,6 +36,7 @@ const SignUp = () => {
       dispatch(signup(form, history));
     } else {
       dispatch(signin(form, history));
+      console.log(form);
     }
   };
 
