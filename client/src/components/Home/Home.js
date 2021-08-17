@@ -45,6 +45,13 @@ const Home = () => {
 
   const handleDeleteChip = (chipToDelete) => setTags(tags.filter((tag) => tag !== chipToDelete));
 
+  let buttonAdmin;
+    if (window.IsAdmin == 1) {
+      buttonAdmin = <Button component={Link} to="/adminqueries" variant="contained" color="primary">View Queries</Button>;
+    } else {
+      buttonAdmin = <Button component={Link} to="/contactus" variant="contained" color="primary">Contact Us</Button>;
+    }
+
   return (
     <Grow in>
       <Container maxWidth="xl">
@@ -72,7 +79,7 @@ const Home = () => {
               </Paper>
             )}
             <br/>
-            <Button component={Link} to="/contactus" variant="contained" color="primary">Contact Us</Button>
+            {buttonAdmin}
           </Grid>
         </Grid>
       </Container>

@@ -16,11 +16,22 @@ const ContactUs = () => {
   const [queryData, setQueryData] = useState(false);
   const dispatch = useDispatch();
   const classes = useStyles();
+  console.log(window.IsAdmin);
+
+  const clear = () => {
+
+    setForm({ name: '', email: '', message: '' });
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form);
     dispatch(createContactUs({form}));
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")
+    );
+    clear();
   };
 
 

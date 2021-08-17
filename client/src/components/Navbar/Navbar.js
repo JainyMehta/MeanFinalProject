@@ -22,6 +22,7 @@ const Navbar = () => {
     history.push('/auth');
 
     setUser(null);
+    window.IsAdmin=0;
   };
 
   useEffect(() => {
